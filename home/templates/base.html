@@ -12,12 +12,15 @@
     </head>
     <body>
         {% block content %}
-        <div class = 'header_main'>
+        <div class="header_main">
             <header>
-                <a href="{% url 'home' %}">Головна</a>
-                <a href="{% url 'registration' %}">Реєстрація</a>
-                <a href="{% url 'authorization' %}">Авторизація</a>
-                <a href="{% url 'contacts' %}">Контакти</a>
+                <a href="{% url 'home' %}">
+                    <img class="Logo_img" src="{% static 'images/Logo.png' %}" alt="Logo" />
+                </a>
+                <a href="{% url 'home' %}" class="{% if request.path == '/' %}current-page{% endif %}">Головна</a>
+                <a href="{% url 'registration' %}" class="{% if request.path == '/registration/' %}current-page{% endif %}">Реєстрація</a>
+                <a href="{% url 'authorization' %}" class="{% if request.path == '/authorization/' %}current-page{% endif %}">Авторизація</a>
+                <a href="{% url 'contacts' %}" class="{% if request.path == '/contacts/' %}current-page{% endif %}">Контакти</a>
             </header>
         </div>
         {% endblock %}
