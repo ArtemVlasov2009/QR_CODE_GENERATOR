@@ -1,1 +1,44 @@
-{% extends "base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Home{% endblock %}</title>
+        {% block link %}
+            <link rel="stylesheet" href="{% static 'css/registration.css' %}"> 
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        <header class="header_main">
+            <a href="{% url 'home' %}">
+                <img class="Logo_img" src="{% static 'images/Logo.png' %}" alt="Logo" />
+            </a>
+            <a href="{% url 'home' %}" class="{% if request.path == '/' %}current-page{% endif %}">Головна</a>
+            <a href="{% url 'registration' %}" class="{% if request.path == '/registration/' %}current-page{% endif %}">Реєстрація</a>
+            <a href="{% url 'authorization' %}" class="{% if request.path == '/authorization/' %}current-page{% endif %}">Авторизація</a>
+            <a href="{% url 'contacts' %}" class="{% if request.path == '/contacts/' %}current-page{% endif %}">Контакти</a>
+        </header>
+        <div class="registration-container">
+            <h1>Реєстрація</h1>
+            <form>
+                <div class="form-group">
+                    <label for="name">Ім'я користувача:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-email">Підтвердження через Email:</label>
+                    <input type="email" id="confirm-email" name="confirm-email" required>
+                </div>
+                <button type="button" class="register-btn" onclick="window.location.href='{% url 'authorization' %}'">Зареєструватися</button>
+            </form>
+        </div>
+        {% endblock %}
+    </body>    
+</html>
