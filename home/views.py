@@ -13,3 +13,8 @@ def render_authorization(request):
 def render_contacts(request):
     return render(request=request, template_name='contacts.html')
 
+def render_generator(request):
+    return render(request=request, template_name='generator.html')
+
+def render_history_gen(request):
+    return render(request=request, template_name='history_gen.html')

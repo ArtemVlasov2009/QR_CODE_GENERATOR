@@ -78,7 +78,7 @@ h1 {
 }
 
 
-#name, #password, #confirm-email {
+#name, #password, #email-confirm {
     width: 610px;
     height: 15px;
     background-color: transparent;
