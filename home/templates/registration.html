@@ -5,10 +5,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Registration Page{% endblock %}</title>
+        <title>{% block title %}Сторінка реєстрації{% endblock %}</title>
         {% block link %}
             <link rel="stylesheet" href="{% static 'css/registration.css' %}"> 
-            <link rel="icon" href="favicon.ico" type="static/images/Logo.png">
+            <link rel="icon" href="{% static 'images/Logo.png' %}" type="image/png">
         {% endblock %}
     </head>
     <body>

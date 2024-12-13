@@ -5,10 +5,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}History Generations Page{% endblock %}</title>
+        <title>{% block title %}Сторінка генерації{% endblock %}</title>
         {% block link %}
-            <link rel="stylesheet" href="{% static 'css/history_gen.css' %}"> 
-            <link rel="icon" href="favicon.ico" type="static/images/Logo.png">
+            <link rel="stylesheet" href="{% static 'css/generator.css' %}">
+            <link rel="icon" href="{% static 'images/Logo.png' %}" type="image/png">
         {% endblock %}
     </head>
     <body>
@@ -22,6 +22,29 @@
             <a href="{% url 'history_generations' %}" class="{% if request.path == '/history_generations/' %}current-page{% endif %}">Історія генерацій</a>
             <a href="{% url 'contacts' %}" class="{% if request.path == '/contacts/' %}current-page{% endif %}">Контакти</a>
         </header>
+        <div class="Generator_frame">
+            <div class="Generator_header">
+                <p>Згенеруйте ваш QR code</p>
+            </div>
+            <div class="Generator_internal_frame">
+                <form>
+                    <label for="link_or_text">Посилання або текст:</label>
+                    <input type="text" id="link_or_text" name="link_or_text"><br><br>
+                    <label for="qr_color">Колір вашого QR коду:</label>
+                    <input type="text" id="qr_color" name="qr_color"><br><br>
+                    <label for="qr_size">Розмір QR коду:</label>
+                    <input type="text" id="qr_size" name="qr_size"><br><br>
+                    <label for="background_image">Фонове зображення:</label>
+                    <input type="text" id="background_image" name="background_image"><br><br>
+                    <label for="shape">Форма:</label>
+                    <input type="text" id="shape" name="shape"><br><br>
+                    <button class = "Buttom_Down" type="submit">Завантажити</button>
+                </form>
+                <div class="qr_code_display">
+                    <img src="path_to_generated_qr_code" alt="Ваш QR код">
+                </div>
+            </div>
+        </div>
         {% endblock %}
     </body>    
 </html>
