@@ -47,9 +47,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
 
-  .Generator_header {
+.Generator_header {
     text-align: center;
     color: #CAD1D4;
     width: 1000px;
@@ -66,12 +66,14 @@ body {
 
 form {
     color: #CAD1D4;
-    font-size: 20px;
+    font-size: 15px;
     width: 425px;
     text-align: left;
     margin-left: 40px;
     width: 425px;
     height: 410px;
+    justify-content: center;
+    padding-top: 10px;
 }
 
 label {
@@ -84,6 +86,7 @@ input {
     border: none;
     border-bottom: 1px solid #ffffff;
     margin-bottom: 20px;
+    color: #CAD1D4; 
 }
 
 .qr_code_display{
@@ -94,10 +97,11 @@ input {
     position: absolute;
     margin-left: 630px;
     margin-top: -400px;
+    right: 40px;
 }
-.Buttom_Down{
-    margin-left: 700px;
-    margin-top: -500px;
+.Buttom_Down {
+    margin-left: 620px;
+    margin-top: -120px; 
     border: 1px solid #CAD1D4;
     background-color: transparent;
     font-size: 18px;
@@ -105,7 +109,20 @@ input {
     border-radius: 5px;
     width: 173px;
     height: 35px;
-    margin-top: -10px;
-
     position: absolute;
+    z-index: 9999; 
+}
+
+.Generator_internal_frame{
+    width: 425px;
+    height: 410px;
+    border: 1px solid #35475D;
+    border-radius: 5px;
+    margin-left: 40px;
+}
+
+.Arrow {
+    margin-left: 460px;
+    position: relative; 
+    top: -250px; 
 }
