@@ -24,8 +24,9 @@ body {
     color: #CAD1D4; 
     font-size: 22px; 
     text-decoration: none; 
-    padding: 15px; 
-    margin-right: -15px;
+    padding: 10px; 
+    margin-top: 10px;
+    text-align: left; 
 }
 
 .header_main a.current-page { 
@@ -38,6 +39,8 @@ body {
     background-color: transparent; 
     padding-right: 1200px;
     padding-left: -10;
+    padding-top: 9px;
+    padding-left: 20px;
 }
 .Generator_frame {
     width: 1000px;
@@ -125,4 +128,28 @@ input {
     margin-left: 460px;
     position: relative; 
     top: -250px; 
+}
+
+.logout {
+    color: #CAD1D4; 
+    font-size: 22px; 
+    text-decoration: none; 
+    padding-top: 0px; 
+    margin-right: 260px;
+    margin-left: 500px;
+}
+
+.ur_name123 {
+    color: #CAD1D4; 
+    font-size: 20px; 
+    text-decoration: none; 
+    padding: 15px; 
+    margin-right: 50px;
+}
+
+.home_url{
+    width: 500px;
+    height: 125px;
+    margin-top: 20px;
+
 }

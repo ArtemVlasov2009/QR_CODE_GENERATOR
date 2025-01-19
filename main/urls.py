@@ -22,6 +22,7 @@ urlpatterns = [
     path('', render_home, name='home'),
     path('registration/', render_registration, name='registration'),
     path('authorization/', render_authorization, name='authorization'),
+    path('logout/', logout_user, name = "logout"),
     path('contacts/', render_contacts, name='contacts'),
     path('generator/', render_generator, name='generator'),
     path('history_gen/', render_history_gen, name='history_generations'),

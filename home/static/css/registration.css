@@ -44,7 +44,7 @@ h1 {
     font-size: 30px;
     font-weight: bold;
     color: #555555;
-    margin-top: 136px;
+    margin-top: 120px;
     margin-left: 561px;
     margin-right: 561px;
     margin-bottom: 0;
@@ -92,3 +92,24 @@ h1 {
     color: #CAD1D4;
 }
 
+.Have_reg {
+    color:#555555;; 
+    font-size: 18px; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.Password_Dont_match{
+    
+    font-size: 18px; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif; 
+    color: red;
+}
+
+.name_not_unique{
+    font-size: 18px; 
+    text-align: center;
+    font-family: 'Roboto', sans-serif; 
+    color: red;
+}

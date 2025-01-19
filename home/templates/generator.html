@@ -14,12 +14,16 @@
     <body>
         {% block content %}
         <header class="header_main">
-            <a href="{% url 'home' %}">
+            <a class = 'home_url' href="{% url 'home' %}">
                 <img class="Logo_img" src="{% static 'images/Logo.png' %}" alt="Logo" />
             </a>
+            <div class="logout">
+                <h6 class = "ur_name123">{{ request.user.username }}</h6>
+                <a class = "logout_knopka" href="{% url 'logout' %}">Вийти</a>
+            </div>
             <a href="{% url 'home' %}" class="{% if request.path == '/' %}current-page{% endif %}">Головна</a>
-            <a href="{% url 'generator' %}" class="{% if request.path == '/generator/' %}current-page{% endif %}">Генерація коду</a>
-            <a href="{% url 'history_generations' %}" class="{% if request.path == '/history_generations/' %}current-page{% endif %}">Історія генерацій</a>
+            <a href="{% url 'generator' %}" class="{% if request.path == '/generator/' %}current-page{% endif %}">Кодогенерація</a>
+            <a href="{% url 'history_generations' %}" class="{% if request.path == '/history_generations/' %}current-page{% endif %}">Генерації</a>
             <a href="{% url 'contacts' %}" class="{% if request.path == '/contacts/' %}current-page{% endif %}">Контакти</a>
         </header>
         <div class="Generator_frame">
@@ -41,7 +45,7 @@
                     <button class = "Buttom_Down" type="submit">Завантажити</button>
                 </form>
                 <div class="qr_code_display">
-                    <img class="Your_QR" src="path_to_generated_qr_code" alt="Ваш QR код">
+                    <img class="Your_QR" src="static/images/qr-code.png" alt="Ваш QR код">
                 </div>
                 <img class="Arrow" src="{% static 'images/Arrow.png' %}" alt="Arrow_img">
             </div>
