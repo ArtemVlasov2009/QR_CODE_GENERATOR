@@ -134,22 +134,22 @@ input {
     color: #CAD1D4; 
     font-size: 22px; 
     text-decoration: none; 
-    padding-top: 0px; 
-    margin-right: 260px;
+    font-weight: bold;
+    padding-top: 9px; 
+    margin-right: 15px;
     margin-left: 500px;
 }
 
-.ur_name123 {
-    color: #CAD1D4; 
-    font-size: 20px; 
-    text-decoration: none; 
-    padding: 15px; 
-    margin-right: 50px;
-}
-
 .home_url{
-    width: 500px;
+    width: 700px;
     height: 125px;
     margin-top: 20px;
+}
 
+.Your_QR {
+    width: 250px;
+    height: 250px;
+    position: fixed;
+    margin-left: 50px;
+    margin-top: 25px;
 }

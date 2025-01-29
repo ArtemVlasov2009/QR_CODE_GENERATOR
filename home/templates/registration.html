@@ -42,12 +42,13 @@
                 <label for="confirm-password">Підтвердження пароля:</label>
                 <input type="password" id="confirm-password" name="confirm_password" required> 
             </div>
-            {% if show_text_passwords_dont_match == False %}
-            <p class = "Password_Dont_match">Паролі не співпадають</p>
-            {% elif show_text_not_unique_name == False %}
-                <p class = "name_not_unique">Такий користувач вже існує</p>
+            {% if show_text_passwords_dont_match %}
+                <p class="Password_Dont_match">Паролі не співпадають</p>
             {% endif %}
-            <p class = "Have_reg">Вже зареєстрований? <a href="{% url 'authorization' %}">Авторизуйтесь</a></p>
+            {% if show_text_not_unique_name %}
+                <p class="name_not_unique">Такий користувач вже існує</p>
+            {% endif %}
+            <p class="Have_reg">Вже зареєстрований? <a class = "Auth_reg_btn" href="{% url 'authorization' %}">Авторизуйтесь</a></p>
             <button type="submit" class="register-btn">Зареєструватися</button>
         </form>
     </div>

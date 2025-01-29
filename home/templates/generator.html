@@ -17,14 +17,13 @@
             <a class = 'home_url' href="{% url 'home' %}">
                 <img class="Logo_img" src="{% static 'images/Logo.png' %}" alt="Logo" />
             </a>
-            <div class="logout">
-                <h6 class = "ur_name123">{{ request.user.username }}</h6>
-                <a class = "logout_knopka" href="{% url 'logout' %}">Вийти</a>
-            </div>
             <a href="{% url 'home' %}" class="{% if request.path == '/' %}current-page{% endif %}">Головна</a>
             <a href="{% url 'generator' %}" class="{% if request.path == '/generator/' %}current-page{% endif %}">Кодогенерація</a>
             <a href="{% url 'history_generations' %}" class="{% if request.path == '/history_generations/' %}current-page{% endif %}">Генерації</a>
             <a href="{% url 'contacts' %}" class="{% if request.path == '/contacts/' %}current-page{% endif %}">Контакти</a>
+            <div class="logout">
+                <a class = "logout_knopka" href="{% url 'logout' %}">Вийти: {{ request.user.username }}</a>
+            </div>
         </header>
         <div class="Generator_frame">
             <div class="Generator_header">
@@ -34,22 +33,45 @@
                 <form>
                     <label for="link_or_text">Посилання або текст:</label>
                     <input type="text" id="link_or_text" name="link_or_text"><br><br>
+            
                     <label for="qr_color">Колір вашого QR коду:</label>
-                    <input type="text" id="qr_color" name="qr_color"><br><br>
+                    <select id="qr_color" name="qr_color">
+                        <option value="black">Чорний</option>
+                        <option value="red">Червоний</option>
+                        <option value="blue">Синій</option>
+                        <option value="green">Зелений</option>
+                    </select><br><br>
+            
                     <label for="qr_size">Розмір QR коду:</label>
-                    <input type="text" id="qr_size" name="qr_size"><br><br>
+                    <select id="qr_size" name="qr_size">
+                        <option value="100x100">100x100</option>
+                        <option value="200x200">200x200</option>
+                        <option value="300x300">300x300</option>
+                        <option value="400x400">400x400</option>
+                    </select><br><br>
+            
                     <label for="background_image">Фонове зображення:</label>
-                    <input type="text" id="background_image" name="background_image"><br><br>
+                    <select id="background_image" name="background_image">
+                        <option value="none">Без зображення</option>
+                        <option value="image1.jpg">Зображення 1</option>
+                        <option value="image2.jpg">Зображення 2</option>
+                        <option value="image3.jpg">Зображення 3</option>
+                    </select><br><br>
+            
                     <label for="shape">Форма:</label>
-                    <input type="text" id="shape" name="shape"><br><br>
-                    <button class = "Buttom_Down" type="submit">Завантажити</button>
+                    <select id="shape" name="shape">
+                        <option value="square">Квадрат</option>
+                        <option value="circle">Коло</option>
+                        <option value="rounded">Закруглений</option>
+                    </select><br><br>
+            
+                    <button class="Buttom_Down" type="submit">Завантажити</button>
                 </form>
-                <div class="qr_code_display">
-                    <img class="Your_QR" src="static/images/qr-code.png" alt="Ваш QR код">
-                </div>
+            </div>
                 <img class="Arrow" src="{% static 'images/Arrow.png' %}" alt="Arrow_img">
             </div>
         </div>
         {% endblock %}
     </body>    
+    <script src="static/js/scripts.js"></script>
 </html>

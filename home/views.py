@@ -9,17 +9,20 @@ def render_home(request):
 def render_registration(request):
     show_text_passwords_dont_match = False
     show_text_not_unique_name = False
+
     if request.method == "POST":
         username = request.POST.get("name")
         password = request.POST.get("password")
         confirm_password = request.POST.get("confirm_password")
-        if password == confirm_password:
+
+        if password and confirm_password and password != confirm_password:
+            show_text_passwords_dont_match = True
+        else:
             try:
                 User.objects.create_user(username=username, password=password)
-    
                 return redirect("authorization")
             except IntegrityError:
-                name = True
+                show_text_not_unique_name = True
 
     return render(
         request=request,
@@ -63,7 +66,3 @@ def render_history_gen(request):
 def logout_user(request):
     logout(request)
     return redirect('authorization')
-    
-    
-    
-    
