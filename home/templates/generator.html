@@ -30,7 +30,8 @@
                 <p>Згенеруйте ваш QR code</p>
             </div>
             <div class="Generator_internal_frame">
-                <form>
+                <form method="POST">
+                    {% csrf_token %}
                     <label for="link_or_text">Посилання або текст:</label>
                     <input type="text" id="link_or_text" name="link_or_text"><br><br>
             
@@ -65,7 +66,8 @@
                         <option value="rounded">Закруглений</option>
                     </select><br><br>
             
-                    <button class="Buttom_Down" type="submit">Завантажити</button>
+                    <button class="Buttom_Down" type="submit">Генирувати</button>
+                    
                 </form>
             </div>
                 <img class="Arrow" src="{% static 'images/Arrow.png' %}" alt="Arrow_img">
